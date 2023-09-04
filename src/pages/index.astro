@@ -1,4 +1,5 @@
 ---
+import Comp from "../components/Comp.tsx"
 ---
 
 <html lang="en">
@@ -8,8 +9,16 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
+		<style is:global>
+			.client {
+				color: red;
+			}
+			.server {
+				color: blue;
+			}
+		</style>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Comp client:idle />
 	</body>
 </html>
